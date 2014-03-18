@@ -2,9 +2,14 @@ EmberProducts::Application.routes.draw do
 
 defaults format: :json do
   get "/products", to: "products#index"
-  get '/carts', to: 'carts#index'
+  get '/product/:id', to: 'products#show'
+  get '/carts/:id', to: 'carts#show'
+  post '/carts', to: 'carts#create'
   get '/items', to: 'items#index'
+  get '/item/:id', to: 'items#show'
   get '/orders', to: 'orders#index'
+  get '/order/:id', to: 'orders#show'
+
 end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
