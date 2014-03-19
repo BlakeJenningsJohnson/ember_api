@@ -6,6 +6,8 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
+
+    puts @product.inspect
   end
 
   def create
@@ -13,6 +15,18 @@ class ProductsController < ApplicationController
     if @product.save
       render :show
     end
+  end
+
+  def update
+    @product = Product.find(params[:id])
+    @product.update(product_params)
+    render :index
+  end
+
+  def delete
+    @product = Product.find(params[:id])
+    @product.destroy
+    render :index
   end
 
   private

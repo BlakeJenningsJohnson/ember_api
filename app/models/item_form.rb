@@ -14,8 +14,7 @@ class ItemForm
   private
 
   def permitted_values
-    puts @item_hash
     @item_hash.permit(:quantity, :product_id, :cart_id, :current_price)
   end
-
 end
+

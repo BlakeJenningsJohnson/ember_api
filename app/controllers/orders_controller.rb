@@ -9,22 +9,9 @@ class OrdersController < ApplicationController
   end
 
   def create
-    @order = Order.new(order_params)
+    @order = OrderForm.new(params[:order]).order
     if @order.save
       render :show
     end
-  end
-
-  private
-
-  def order_params
-    params.require(:order).permit(
-      :customer_name,
-      :email,
-      :status,
-      :cvv,
-      :zip,
-      :exp_date,
-      )
   end
 end

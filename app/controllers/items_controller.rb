@@ -16,7 +16,8 @@ class ItemsController < ApplicationController
   end
 
   def delete
-    @item = Item.find(params[:id])
-    @item.destroy
+    item = Item.find(params[:id])
+    item.destroy
+    render :index
   end
 end

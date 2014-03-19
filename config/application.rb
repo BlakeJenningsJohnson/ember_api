@@ -16,7 +16,7 @@ module EmberProducts
     config.middleware.use Rack::Cors do
         allow do
             origins '*'
-            resource '*', :headers => :any, :methods => [:get, :post, :options, :delete]
+            resource '*', :headers => :any, :methods => [:get, :post, :options, :delete, :patch, :put]
         end
     end
 
