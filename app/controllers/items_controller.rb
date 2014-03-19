@@ -7,4 +7,14 @@ class ItemsController < ApplicationController
   def show
     @item = Item.find(params[:id])
   end
+
+  def create
+    @item = ItemForm.new(params[:item]).item 
+    if @item.save
+      render :show
+    end
+  end
 end
+  # def delete
+  #   @item.destroy
+  # end
