@@ -6,10 +6,11 @@ defaults format: :json do
   get '/carts/:id', to: 'carts#show'
   post '/carts', to: 'carts#create'
   get '/items', to: 'items#index'
-  get '/item/:id', to: 'items#show'
+  get '/items/:id', to: 'items#show'
+  delete '/items/:id', to: 'items#delete'
   post '/items', to: 'items#create'
   get '/orders', to: 'orders#index'
-  get '/order/:id', to: 'orders#show'
+  get '/orders/:id', to: 'orders#show'
 
 end
   # The priority is based upon order of creation: first created -> highest priority.

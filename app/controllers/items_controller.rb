@@ -14,7 +14,9 @@ class ItemsController < ApplicationController
       render :show
     end
   end
+
+  def delete
+    @item = Item.find(params[:id])
+    @item.destroy
+  end
 end
-  # def delete
-  #   @item.destroy
-  # end
