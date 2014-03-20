@@ -14,6 +14,8 @@ defaults format: :json do
   get '/items/:id', to: 'items#show'
   delete '/items/:id', to: 'items#delete'
   post '/items', to: 'items#create'
+  put '/items/:id', to: 'items#update'
+
 
   get '/orders', to: 'orders#index'
   get '/orders/:id', to: 'orders#show'

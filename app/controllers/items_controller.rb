@@ -1,11 +1,11 @@
 class ItemsController < ApplicationController
+  before_action :find_item, except: [:index, :create]
 
   def index
     @items = Item.all
   end
 
   def show
-    @item = Item.find(params[:id])
   end
 
   def create
@@ -15,9 +15,19 @@ class ItemsController < ApplicationController
     end
   end
 
+  def update
+    @item.update(ItemForm.new(params[:item]).attributes)
+    render :index
+  end
+
   def delete
-    item = Item.find(params[:id])
     item.destroy
     render :index
+  end
+
+  private
+
+  def find_item
+    @item = Item.find(params[:id])
   end
 end
