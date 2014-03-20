@@ -17,11 +17,12 @@ class ItemsController < ApplicationController
 
   def update
     @item.update(ItemForm.new(params[:item]).attributes)
+    @item.save
     render :index
   end
 
   def delete
-    item.destroy
+    @item.destroy
     render :index
   end
 
