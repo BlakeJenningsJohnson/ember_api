@@ -9,12 +9,10 @@ class OrderForm
   end
 
   def order
-    Order.new(permitted_values)
+    Order.new(attributes)
   end
 
-  private
-
-  def permitted_values
+  def attributes
     @order_hash.permit(:customer_name, :email, :status, :cvv, :zip, :exp_date, :credit_card_number, :cart_id)
   end
 end
